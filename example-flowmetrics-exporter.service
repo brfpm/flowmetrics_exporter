@@ -1,0 +1,11 @@
+[Unit]
+Description=FlowMetrics Exporter
+After=network.target
+
+[Service]
+Restart=always
+User=root
+ExecStart=/opt/flowmetrics_exporter/flowmetrics_exporter -c /opt/flowmetrics_exporter/config.yaml
+
+[Install]
+WantedBy=multi-user.target
