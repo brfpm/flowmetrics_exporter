@@ -18,7 +18,11 @@ jobs:
         go-version: '1.24'
 
     - name: Install dependencies
-      run: sudo apt-get install libpcap-dev -y
+      run: |
+       sudo apt-get install libpcap-dev -y
+       dpkg --add-architecture arm64 
+       apt update
+       apt install -y gcc-aarch64-linux-gnu libpcap-dev:arm64 libc6-dev-arm64-cross crossbuild-essential-arm64
 
     - name: Build amd64
       run: go build -buildvcs=false -o flowmetrics_exporter .
@@ -32,4 +36,4 @@ jobs:
         name: ${{ github.ref_name }}
         files: |
           flowmetrics_exporter
-          flowmetrics_exporter
+          arm64-flowmetrics_exporter
