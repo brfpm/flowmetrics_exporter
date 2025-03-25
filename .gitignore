@@ -40,5 +40,5 @@ go.work.sum
 *.vsix
 
 # Builds
-flowmetrics-exporte
-amd64-flowmetrics-exporte
+flowmetrics_exporter
+amd64-flowmetrics_exporter
