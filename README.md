@@ -16,9 +16,9 @@
 ## ⚙️ Installation
 
 ### **Run the Exporter**
+Download **flowmetrics_exporter** and **config.json** from the [releases tab](https://github.com/brfpm/flowmetrics_exporter/releases) and run:
 ```bash
-wget release
-./flowmetrics_exporter -c config.yaml
+sudo ./flowmetrics_exporter -c config.yaml
 ```
 
 ### **Build the Binary**

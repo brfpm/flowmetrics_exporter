@@ -7,7 +7,7 @@ cidrInternalList:
   - "192.168.1.0/24"
   - "10.10.10.0/24"
 
-bpfFilter: "" #"src net 192.168.1.0/24"
+bpfFilter: "" # example: "src net 192.168.1.0/24"
 enableBytesPerFlow: false
 interfaceName: "eth0"
 
