@@ -20,15 +20,9 @@ jobs:
     - name: Install dependencies
       run: |
        sudo apt-get install libpcap-dev -y
-       sudo dpkg --add-architecture arm64 
-       sudo apt update
-       sudo apt install -y gcc-aarch64-linux-gnu libpcap-dev:arm64 libc6-dev-arm64-cross crossbuild-essential-arm64
 
     - name: Build amd64
       run: go build -buildvcs=false -o flowmetrics_exporter .
-
-    - name: Build arm64
-      run: CGO_ENABLED=1 CC=aarch64-linux-gnu-gcc GOOS=linux GOARCH=arm64  go build -buildvcs=false -o arm64-flowmetrics_exporter .
 
     - name: Release
       uses: softprops/action-gh-release@v2
@@ -36,4 +30,3 @@ jobs:
         name: ${{ github.ref_name }}
         files: |
           flowmetrics_exporter
-          arm64-flowmetrics_exporter
